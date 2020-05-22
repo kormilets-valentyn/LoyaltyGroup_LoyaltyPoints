@@ -1,0 +1,11 @@
+<!-- ko if: isDisplayed() -->
+<tr class="totals">
+    <th class="mark" scope="row"><input type="checkbox"
+                                        name="apply"
+                                        class="checkbox"
+                                        data-bind="event: {change: usePoints}, checked: someFunc"/>
+        <label data-bind="attr: {for: 'apply'}">
+            <span data-bind="i18n: 'Apply Loyalty points'"></span>
+        </label></th>
+</tr>
+<!-- /ko -->

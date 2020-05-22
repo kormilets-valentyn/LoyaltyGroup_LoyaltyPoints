@@ -1,0 +1,22 @@
+<?php
+/** @var LoyaltyGroup\LoyaltyPoints\Block\Post $block*/
+?>
+<span> My Ref Link: <b><?php print_r($block->getRefLink() . '?ref=' . $block->getCustomerId());?></b></span> <br/>
+<span> My Loyalty Points:  <b><?php print_r($block->getPointsCount());?></b></span><br/>
+<span> My percent of cashback: <b><?php print_r($block->customConfig());?> %</b></span><br/>
+<br/>
+<p><span><b>History of accrual and cancel:</b></span></p>
+<table class="table">
+        <tr>
+            <td><b>Count of points</b></td>
+            <td><b>Status</b></td>
+            <td><b>Time</b></td>
+        </tr>
+    <?php foreach (($block->getHistory()) as $value): ?>
+        <tr>
+            <td><?php print_r($value['points_count']) ?></td>
+            <td><?php print_r($value['status']) ?></td>
+            <td><?php print_r($value['timestamp']) ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
